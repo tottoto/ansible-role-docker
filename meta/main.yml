@@ -1,6 +1,7 @@
 ---
 
 galaxy_info:
+  role_name: docker
   author: tottoto
   description: An ansible rolr to install docker
   license: MIT
