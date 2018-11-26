@@ -1,5 +1,13 @@
 ---
 
+- name: The deprecated versions of docker is not installed
+  apt:
+    name:
+      - docker
+      - docker-engine
+      - docker.io
+    state: absent
+
 - name: Dependent packages are installed
   apt:
     name:
