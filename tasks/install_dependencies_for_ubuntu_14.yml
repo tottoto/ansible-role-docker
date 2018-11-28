@@ -1,0 +1,10 @@
+---
+
+- name: Python pip is installed
+  apt:
+    name: python-pip
+
+- name: Dependent python packages are installed
+  pip:
+    name:
+      - ndg-httpsclient
