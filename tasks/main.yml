@@ -26,5 +26,5 @@
 
 - name: Docker is installed
   apt:
-    name: docker-ce
+    name: '{{ docker.package_name }}'
     update_cache: yes
