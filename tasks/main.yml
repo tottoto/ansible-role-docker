@@ -34,3 +34,8 @@
   apt:
     name: '{{ docker_package_name }}'
     update_cache: yes
+
+- name: The docker service is configurated
+  service:
+    name: docker
+    state: '{{ docker_service_state }}'
