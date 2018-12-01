@@ -3,3 +3,4 @@
 docker_package_name: docker-ce
 docker_users: []
 docker_service_state: started
+docker_compose_version: 1.23.1
