@@ -35,6 +35,12 @@
     name: '{{ docker_package_name }}'
     update_cache: yes
 
+- name: The users are added to docker group
+  user:
+    name: '{{ item }}'
+    groups: docker
+  loop: '{{ docker_users }}'
+
 - name: The docker service is configurated
   service:
     name: docker
