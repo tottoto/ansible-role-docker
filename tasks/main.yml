@@ -16,6 +16,14 @@
       - software-properties-common
     update_cache: yes
 
+- name: Dependent packages on Debian[8,9] are installed
+  apt:
+    name: gnupg2
+    update_cache: yes
+  when:
+    - ansible_distribution == "Debian"
+    - ansible_distribution_major_version in ["8", "9"]
+
 - name: Dependent packages on Ubuntu 14 are installed
   include_tasks: install_dependencies_for_ubuntu_14.yml
   when:
@@ -24,7 +32,7 @@
 
 - name: Official Docker GPG Key is added
   apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
+    url: "https://download.docker.com/linux/{{ ansible_lsb.id | lower }}/gpg"
 
 - name: Docker repository is added
   apt_repository:
